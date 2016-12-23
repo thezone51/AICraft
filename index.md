@@ -1,8 +1,8 @@
-## Welcome to GitHub Pages
+## Привет.
 
-You can use the [editor on GitHub](https://github.com/thezone51/xelaj_project/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+Я решил сделать очень странную вещь. Сделать Minecraft. Нет, серьезно.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+AICraft -- это платформа для создания ботов, в основу которого заложена механика игры minecraft. Геймплей заключается не столько в изучении мира, сколько в создании алгоритмов, изучающих мир в режиме 24/7. 
 
 ### Markdown
 
