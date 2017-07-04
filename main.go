@@ -29,23 +29,3 @@ func (N *Neuron) Connect(C *Neuron) {
   N.Output[0] = &C
   C.Input[0] = &N
 }
-
-
-var n1, n2 Neuron
-
-func main() {
-  n1.OutputSize(1)
-  n2.InputSize(1)
-  n1.Connect(&n2)
-
-  fmt.Println(n1)
-  fmt.Println()
-  fmt.Println(n2)
-
-  n1.OutputSize(2)
-  n2.InputSize(2)
-
-  fmt.Println(n1)
-  fmt.Println()
-  fmt.Println(n2)
-}
