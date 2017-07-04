@@ -25,7 +25,6 @@ func (N *Neuron) StateIs(v float64) {
 }
 
 func (N *Neuron) Connect(C *Neuron) {
-  if N.Output[len(N.Output)-1] != nil {}
-  N.Output[0] = &C
-  C.Input[0] = &N
+  N.Output = append(N.Output, &C)
+  C.Input  = append(C.Input, &N)
 }
