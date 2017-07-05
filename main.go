@@ -25,6 +25,19 @@ func (N *Neuron) StateIs(v float64) {
 }
 
 func (N *Neuron) Connect(C *Neuron) {
-  N.Output = append(N.Output, &C)
-  C.Input  = append(C.Input, &N)
+  if N == C {panic("neuron was self connected")}
+  var haveNconnect, haveCconnect bool
+  if (len(N.Output) !=0) && (len(C.Input) != 0) {
+    for i := 0; i < len(N.Output); i++ {
+      if N.Output[i] == C {haveNconnect = true}
+    }
+    if !haveNconnect {N.Output  = append(N.Output, C)}
+    for i := 0; i < len(N.Output); i++ {
+      if C.Input[i] == N {haveCconnect = true}
+    }
+    if !haveCconnect {C.Input  = append(C.Input, N)}
+  } else {
+    N.Output  = append(N.Output, C)
+    C.Input  = append(C.Input, N)
+  }
 }
