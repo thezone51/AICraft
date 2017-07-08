@@ -1,16 +1,8 @@
 package gonet
 
-import (
-  "fmt"
-)
-
-// just for convenience
-type Id int
-
-// что бы не копировать всю структуру целиком в connect(), пришлось сделать указатель на указатель. наверное неэффективно по времени, но по памяти точно
 type Neuron struct {
-  Input  []**Neuron
-  Output []**Neuron
+  Input  []*Neuron
+  Output []*Neuron
   W float64
   State float64
 }
