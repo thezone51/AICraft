@@ -1,4 +1,4 @@
-package main
+package gonet
 
 import (
   "fmt"
@@ -41,3 +41,28 @@ func (N *Neuron) Connect(C *Neuron) {
     C.Input  = append(C.Input, N)
   }
 }
+
+func sigmoid(x float64) float64{
+  return 1.0 / (1.0 + math.Exp(x*-1))
+}
+
+func mse(perfect, actual float64) float64{
+  return (perfect*perfect - 2*perfect*actual + actual*actual)
+}
+
+func erroutput(actual, expected float64) float64{
+  return (actual - expected)
+}
+
+func errhidden(weight, delta float64) float64 {
+  return (weight*delta)
+}
+
+func delta(err,x float64) float64{
+  return err*sigmoid(x)*(1-sigmoid(x))
+}
+
+func wieght_change(weight,output,delta float64) float64 {
+  return (LEARNING_RATE*0.1 + weight - output * delta * LEARNING_RATE)
+}
+
